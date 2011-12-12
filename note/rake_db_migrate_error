@@ -1,0 +1,38 @@
+stanley-luis-mac-mini:sample1 stnhhl2000$ mdfind pg_config|grep bin|uniq
+/Library/PostgreSQL/9.1/bin/pg_config
+stanley-luis-mac-mini:sample1 stnhhl2000$ env PATH
+env: PATH: No such file or directory
+stanley-luis-mac-mini:sample1 stnhhl2000$ ls /Library/PostgreSQL/9.1/bin
+clusterdb		pg_basebackup		pgbench
+createdb		pg_config		pltcl_delmod
+createlang		pg_controldata		pltcl_listmod
+createuser		pg_ctl			pltcl_loadmod
+dropdb			pg_dump			postgres
+droplang		pg_dumpall		postmaster
+dropuser		pg_resetxlog		psql
+ecpg			pg_restore		reindexdb
+initdb			pg_standby		vacuumdb
+oid2name		pg_test_fsync		vacuumlo
+pg_archivecleanup	pg_upgrade
+stanley-luis-mac-mini:sample1 stnhhl2000$ 
+stanley-luis-mac-mini:sample1 stnhhl2000$ 
+stanley-luis-mac-mini:sample1 stnhhl2000$ PATH=/Library/PostgreSQL/9.1/bin:$PATH sudo gem install pg
+Password:
+Building native extensions.  This could take a while...
+Successfully installed pg-0.12.0
+1 gem installed
+Installing ri documentation for pg-0.12.0...
+Installing RDoc documentation for pg-0.12.0...
+stanley-luis-mac-mini:sample1 stnhhl2000$ 
+stanley-luis-mac-mini:sample1 stnhhl2000$ 
+stanley-luis-mac-mini:sample1 stnhhl2000$ 
+stanley-luis-mac-mini:sample1 stnhhl2000$ heroku  rake db:migraterake aborted!
+Please install the postgresql adapter: `gem install activerecord-postgresql-adapter` (pg is not part of the bundle. Add it to Gemfile.)
+
+Tasks: TOP => db:migrate => environment
+(See full trace by running task with --trace)
+stanley-luis-mac-mini:sample1 stnhhl2000$ gem install activerecord-postgresql-adapter
+ERROR:  Could not find a valid gem 'activerecord-postgresql-adapter' (>= 0) in any repository
+ERROR:  Possible alternatives: activerecord-postgis-adapter, activerecord-jdbcpostgresql-adapter, activerecord-postgresql-cursors, activerecord-jdbcmysql-adapter, activerecord-jdbcmssql-adapter
+stanley-luis-mac-mini:sample1 stnhhl2000$ 
+
